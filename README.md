@@ -1,3 +1,2 @@
 # theory-and-practice.github.io
-Theory and Practice
-Test Commit
+You can reach my site at https://theory-and-practice.github.io
