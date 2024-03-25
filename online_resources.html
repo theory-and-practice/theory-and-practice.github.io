@@ -33,14 +33,55 @@
             <!-- Grid -->
             <div class="w3-row">
 
-                <!-- Cards -->
-                <div class="w3-col l8 s12">
-                    <div class="w3-card w3-margin">
-                        <div class="w3-container w3-padding">
-                            <h4>Online Resources</h4>
-                        </div>
-                    </div>
-                </div>
+                <!-- Resources -->
+                <div class="w3-container">
+                    <h2>Online Resources</h2>
+                    <p>Search for a name in the input field.</p>
+                  
+                    <input class="w3-input w3-border w3-padding" type="text" placeholder="Search..." id="myInput" onkeyup="myFunction()">
+                  
+                    <table class="w3-table-all w3-margin-top" id="myTable">
+                      <tr>
+                        <th style="width:60%;">Site</th>
+                        <th style="width:40%;">Use Case</th>
+                      </tr>
+                      <tr>
+                        <td>Alfreds Futterkiste</td>
+                        <td>Germany</td>
+                      </tr>
+                      <tr>
+                        <td>Berglunds snabbkop</td>
+                        <td>Sweden</td>
+                      </tr>
+                      <tr>
+                        <td>Island Trading</td>
+                        <td>UK</td>
+                      </tr>
+                      <tr>
+                        <td>Koniglich Essen</td>
+                        <td>Germany</td>
+                      </tr>
+                      <tr>
+                        <td>Laughing Bacchus Winecellars</td>
+                        <td>Canada</td>
+                      </tr>
+                      <tr>
+                        <td>Magazzini Alimentari Riuniti</td>
+                        <td>Italy</td>
+                      </tr>
+                      <tr>
+                        <td>North/South</td>
+                        <td>UK</td>
+                      </tr>
+                      <tr>
+                        <td>Paris specialites</td>
+                        <td>France</td>
+                      </tr>
+                    </table>
+                  
+                    <p><strong>Tip:</strong> Remove toUpperCase() if you want to perform a case-sensitive search.</p>
+                    <p>Change tr[i].getElementsByTagName('td')[0] to [1] if you want to search for "Country" (index 1) instead of "Name" (index 0).</p>
+                  </div>
 
                 <!-- Introduction menu -->
                 <div class="w3-col l4">
@@ -71,5 +112,27 @@
         <footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
             <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
         </footer>
+
+        <script>
+            function myFunction() {
+              var input, filter, table, tr, td, i;
+              input = document.getElementById("myInput");
+              filter = input.value.toUpperCase();
+              table = document.getElementById("myTable");
+              tr = table.getElementsByTagName("tr");
+              for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                  txtValue = td.textContent || td.innerText;
+                  if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                  } else {
+                    tr[i].style.display = "none";
+                  }
+                }
+              }
+            }
+        </script>
+
     </body>
 </html>
