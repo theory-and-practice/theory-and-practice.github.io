@@ -33,41 +33,33 @@
 
             <!-- Grid -->
             <div class="w3-row">
+                <h2>Readily Available Materials</h2>
+                <input class="w3-input w3-border w3-padding" type="text" placeholder="Search..." id="myInput" onkeyup="myFunction()">
+                <table class="w3-table-all w3-margin-top" id="myTable">
+                    <tr>
+                        <th style="width:30%;">Material</th>
+                        <th style="width:30%;">Info</th>
+                        <th style="width:40%;">Availability</th>
+                    </tr>
 
-                <!-- Cards -->
-                <div class="w3-col l8 s12">
-                    <div class="w3-card w3-margin">
-                        <div class="w3-container w3-padding">
-                            <h4>Readily Available Materials</h4>
-                        </div>
-                        <ul class="w3-ul w3-hoverable w3-white">
-                            <li class="w3-padding-16">
-                                <img src="/images/no_molecule.svg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
-                                <span class="w3-medium">Test</span><br>
-                                <span>Test Test</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Introduction menu -->
-                <div class="w3-col l4">
-                    <!-- Connect -->
-                    <div class="w3-card w3-margin">
-                        <div class="w3-container w3-padding">
-                            <a href="https://www.youtube.com/@theory_and_practice" rel="nofollow"><i class="fa-brands fa-youtube w3-large"></i></a>
-                            <a href="https://www.instagram.com/theory_n_pract/" rel="nofollow"><i class="fa-brands fa-instagram w3-large"></i></a>
-                            <a href="https://twitter.com/theory_n_pract" rel="nofollow"><i class="fa-brands fa-twitter w3-large"></i></a>
-                            <a href="https://www.tumblr.com/blog/theory-and-practice" rel="nofollow"><i class="fa-brands fa-tumblr w3-large"></i></a>
-                            <a href="https://github.com/theory-and-practice" rel="nofollow"><i class="fa-brands fa-github w3-large"></i></a>
-                            <a href="https://hackaday.io/theoryandpractice" rel="nofollow"><i class="fa-solid fa-skull-crossbones w3-large"></i></a>
-                            <a href="https://vimeo.com/theoryandpracticevideos" rel="nofollow"><i class="fa-brands fa-vimeo w3-large"></i></a>
-                            <a href="https://www.facebook.com/theorynpractice" rel="nofollow"><i class="fa-brands fa-facebook w3-large"></i></a>
-                        </div>
-                    </div>
-                <!-- END Introduction Menu -->
-                </div>
-
+                    <tr>
+                        <td>
+                            <span class="w3-xlarge"><a href="https://en.wikipedia.org/wiki/Benzyl_acetate">Benzyl Acetate</a></span><br>
+                            <span class="w3-medium"><img src="/images/no_molecule.svg" alt="Image" class="w3-left w3-margin-right" style="width:50px"></span><br>
+                        </td>
+                        <td>
+                            <span class="w3-medium"><strong>Systematic:</strong> Benzyl Acetate</span><br>
+                            <span class="w3-medium"><strong>CAS:</strong> 140-11-4</span><br>
+                            <span class="w3-tag w3-black w3-margin-bottom">Organic Compound</span>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>Benzyl Acetate - <a href="https://shop.perfumersapprentice.com/">Perfumer's Apprentice</a> - $15.00 / 250 g</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+        
             <!-- END GRID -->
             </div>
             <br>
@@ -79,5 +71,27 @@
         <footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
             <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
         </footer>
+
+        <script>
+            function myFunction() {
+                var input, filter, table, tr, td, i;
+                input = document.getElementById("myInput");
+                filter = input.value.toUpperCase();
+                table = document.getElementById("myTable");
+                tr = table.getElementsByTagName("tr");
+                for (i = 0; i < tr.length; i++) {
+                    td = tr[i].getElementsByTagName("td")[1];
+                    if (td) {
+                        txtValue = td.textContent || td.innerText;
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                            tr[i].style.display = "";
+                        } 
+                        else {
+                            tr[i].style.display = "none";
+                        }
+                    }
+                }
+            }
+        </script>
     </body>
 </html>
