@@ -30,32 +30,22 @@
             </header>
 
             <div class="w3-row">
+                <h2>Organic Compounds</h2>
+                <input class="w3-input w3-border w3-padding" type="text" placeholder="Search..." id="myInput" onkeyup="myFunction()">
+                <table class="w3-table-all w3-margin-top" id="myTable">
+                    <tr>
+                        <th style="width:30%;">Material</th>
+                        <th style="width:30%;">Info</th>
+                        <th style="width:40%;">Availability</th>
+                    </tr>   
 
-                <div class="w3-container">
-                    <h2>Suppliers</h2>
-                  
-                    <input class="w3-input w3-border w3-padding" type="text" placeholder="Search..." id="myInput" onkeyup="myFunction()">
-                  
-                    <table class="w3-table-all w3-margin-top" id="supplierTable">
-                      <tr>
-                        <th style="width:30%;">Site</th>
-                        <th style="width:70%;">Use Case</th>
-                      </tr>
+                    <!-- REPLACE BELOW -->
+                    
+                    
 
-                      <tr>
-                        <td><a href="https://www.mcmaster.com/">McMaster-Carr</a></td>
-                        <td>You can find almost anything here.</td>
-                      </tr>
-
-                      <!-- Template below
-                      <tr>
-                        <td><a href=SUPPLIER URL>SUPPLIER NAME</a></td>
-                        <td>USE CASE/NOTES</td>
-                      </tr>
-                      -->
-                    </table>
-                  </div>
-
+                    <!-- REPLACE ABOVE -->
+                </table>
+        
             </div>
             <br>
 
@@ -71,7 +61,7 @@
                 var input, filter, table, tr, td, i;
                 input = document.getElementById("myInput");
                 filter = input.value.toUpperCase();
-                table = document.getElementById("supplierTable");
+                table = document.getElementById("myTable");
                 tr = table.getElementsByTagName("tr");
                 for (i = 0; i < tr.length; i++) {
                     td = tr[i].getElementsByTagName("td")[1];
